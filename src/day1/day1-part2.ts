@@ -6,12 +6,8 @@ console.log(
     .replace(/\r\n/g, '\n')
     .split('\n')
     .map(Number)
-    .reduce((acc, _, i, array) => {
-      if (i < 3) {
-        return acc;
-      }
-      const w1 = array[i - 3] + array[i - 2] + array[i - 1];
-      const w2 = array[i - 2] + array[i - 1] + array[i];
-      return acc + (w2 > w1 ? 1 : 0);
-    }, 0)
+    .reduce(
+      (acc, _, i, array) => acc + (i < 3 ? 0 : array[i] > array[i - 3] ? 1 : 0),
+      0
+    )
 );
