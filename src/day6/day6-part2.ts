@@ -7,7 +7,6 @@ const fish = String(fs.readFileSync(process.argv[2]))
   .filter(Boolean)
   .map(Number);
 
-
 // I cheated and stole this from https://github.com/LucasDower/AOC-2021/blob/master/day-06/solution.cpp
 function fishAfterDays(fish: number[], days: number) {
   const timers = [0, 0, 0, 0, 0, 0, 0, 0, 0];
